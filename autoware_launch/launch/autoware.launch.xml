@@ -15,9 +15,9 @@
   <arg name="launch_sensing" default="true" description="launch sensing"/>
   <arg name="launch_sensing_driver" default="true" description="launch sensing driver"/>
   <arg name="launch_localization" default="true" description="launch localization"/>
-  <arg name="launch_perception" default="true" description="launch perception"/>
-  <arg name="launch_planning" default="true" description="launch planning"/>
-  <arg name="launch_control" default="true" description="launch control"/>
+  <arg name="launch_perception" default="false" description="launch perception"/>
+  <arg name="launch_planning" default="false" description="launch planning"/>
+  <arg name="launch_control" default="false" description="launch control"/>
   <!-- Global parameters -->
   <arg name="use_sim_time" default="false" description="use_sim_time"/>
   <!-- Vehicle -->
@@ -49,13 +49,14 @@
   </group>
 
   <!-- Pointcloud container -->
-  <group if="$(var use_pointcloud_container)">
-    <include file="$(find-pkg-share autoware_launch)/launch/pointcloud_container.launch.py">
-      <arg name="use_multithread" value="true"/>
-      <arg name="container_name" value="$(var pointcloud_container_name)"/>
-    </include>
-  </group>
-
+  <!--
+ <group if="$(var use_pointcloud_container)">
+   <include file="$(find-pkg-share autoware_launch)/launch/pointcloud_container.launch.py">
+     <arg name="use_multithread" value="true"/>
+     <arg name="container_name" value="$(var pointcloud_container_name)"/>
+   </include>
+ </group>
+ -->
   <!-- Vehicle -->
   <group if="$(var launch_vehicle)">
     <include file="$(find-pkg-share tier4_vehicle_launch)/launch/vehicle.launch.xml">
@@ -63,11 +64,11 @@
       <arg name="sensor_model" value="$(var sensor_model)"/>
       <arg name="vehicle_id" value="$(var vehicle_id)"/>
       <arg name="launch_vehicle_interface" value="$(var launch_vehicle_interface)"/>
-      <arg name="config_dir" value="$(find-pkg-share individual_params)/config/$(var vehicle_id)/$(var sensor_model)"/>
-    </include>
-  </group>
+  <!-- <arg name="config_dir" value="$(find-pkg-share individual_params)/config/$(var vehicle_id)/$(var sensor_model)"/>-->
+</include>
+</group>
 
-  <!-- System -->
+<!-- System -->
   <group if="$(var launch_system)">
     <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_system_component.launch.xml"/>
   </group>

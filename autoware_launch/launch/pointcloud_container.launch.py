@@ -48,7 +48,7 @@ def generate_launch_description():
 
     return LaunchDescription(
         [
-            add_launch_arg("use_multithread", "false"),
+            add_launch_arg("use_multithread", "true"),
             add_launch_arg("container_name", "pointcloud_container"),
             set_container_executable,
             set_container_mt_executable,

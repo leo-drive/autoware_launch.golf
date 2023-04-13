@@ -10,10 +10,10 @@
       constant_velocity_dist_threshold: 2.0
 
     forward:
-      max_acc: 1.0
-      min_acc: -1.0
-      max_jerk: 0.3
-      min_jerk: -0.3
+      max_acc: 1.57
+      min_acc: -2.0
+      max_jerk: 0.9
+      min_jerk: -0.9
       kp: 0.3
 
     backward:

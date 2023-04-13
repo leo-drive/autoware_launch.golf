@@ -518,7 +518,7 @@ Visualization Manager:
             lanelet_id: true
             left_lane_bound: true
             right_lane_bound: true
-            road_lanelets: false
+            road_lanelets: true
             speed_bump: true
             stop_lines: true
           Topic:
@@ -927,6 +927,7 @@ Visualization Manager:
                   PEDESTRIAN:
                     Alpha: 0.9990000128746033
                     Color: 255; 192; 203
+                  Polygon Type: 3d
                   TRAILER:
                     Alpha: 0.9990000128746033
                     Color: 30; 144; 255
@@ -943,6 +944,7 @@ Visualization Manager:
                     Alpha: 0.9990000128746033
                     Color: 255; 255; 255
                   Value: true
+                  Visualization Type: Normal
               Enabled: false
               Name: Detection
             - Class: rviz_common/Group
@@ -976,6 +978,7 @@ Visualization Manager:
                   PEDESTRIAN:
                     Alpha: 0.9990000128746033
                     Color: 255; 192; 203
+                  Polygon Type: 3d
                   TRAILER:
                     Alpha: 0.9990000128746033
                     Color: 30; 144; 255
@@ -992,6 +995,7 @@ Visualization Manager:
                     Alpha: 0.9990000128746033
                     Color: 255; 255; 255
                   Value: true
+                  Visualization Type: Normal
               Enabled: false
               Name: Tracking
             - Class: rviz_common/Group
@@ -1025,6 +1029,7 @@ Visualization Manager:
                   PEDESTRIAN:
                     Alpha: 0.9990000128746033
                     Color: 255; 192; 203
+                  Polygon Type: 3d
                   TRAILER:
                     Alpha: 0.9990000128746033
                     Color: 30; 144; 255
@@ -1041,6 +1046,7 @@ Visualization Manager:
                     Alpha: 0.9990000128746033
                     Color: 255; 255; 255
                   Value: true
+                  Visualization Type: Normal
                 - Class: rviz_default_plugins/MarkerArray
                   Enabled: false
                   Name: Maneuver
@@ -3163,7 +3169,7 @@ Visualization Manager:
               Value: true
           Enabled: false
           Name: Diagnostic
-      Enabled: true
+      Enabled: false
       Name: Planning
     - Class: rviz_common/Group
       Displays:

@@ -21,8 +21,8 @@
       # param for ego's slow down velocity
       slow_down:
         min_slow_down_velocity: 2.78 # [m/s] target vehicle velocity when module receive slow down command from FOA (2.78 m/s = 10.0 kmph)
-        max_slow_down_jerk: -1.5 # [m/sss] minimum jerk deceleration for safe brake
-        max_slow_down_accel: -2.5 # [m/ss] minimum accel deceleration for safe brake
+        max_slow_down_jerk: -0.6 # [m/sss] minimum jerk deceleration for safe brake
+        max_slow_down_accel: -1.5 # [m/ss] minimum accel deceleration for safe brake
         no_relax_velocity: 2.78 # [m/s] if the current velocity is less than X m/s, ego always stops at the stop position(not relax deceleration constraints 2.78 m/s = 10 kmph)
 
       # param for stuck vehicles
@@ -61,7 +61,7 @@
       object_filtering:
         crosswalk_attention_range: 1.0 # [m] the detection area is defined as -X meters before the crosswalk to +X meters behind the crosswalk
         target_object:
-          unknown: true # [-] whether to look and stop by UNKNOWN objects
+          unknown: false # [-] whether to look and stop by UNKNOWN objects
           bicycle: true # [-] whether to look and stop by BICYCLE objects
           motorcycle: true # [-] whether to look and stop by MOTORCYCLE objects (tmp: currently it is difficult for perception modules to detect bicycles and motorcycles separately.)
           pedestrian: true # [-] whether to look and stop by PEDESTRIAN objects

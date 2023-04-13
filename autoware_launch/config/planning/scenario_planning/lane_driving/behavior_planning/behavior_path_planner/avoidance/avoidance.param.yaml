@@ -17,7 +17,7 @@
 
       # drivable area setting
       use_adjacent_lane: true
-      use_opposite_lane: true
+      use_opposite_lane: false
       use_intersection_areas: true
       use_hatched_road_markings: true
 
@@ -35,7 +35,7 @@
           max_expand_ratio: 0.0                        # [-]
           envelope_buffer_margin: 0.3                  # [m]
           avoid_margin_lateral: 1.0                    # [m]
-          safety_buffer_lateral: 0.7                   # [m]
+          safety_buffer_lateral: 0.3                   # [m]
           safety_buffer_longitudinal: 0.0              # [m]
         truck:
           is_target: true
@@ -161,8 +161,8 @@
           lateral_execution_threshold: 0.09             # [m]
           lateral_small_shift_threshold: 0.101          # [m]
           lateral_avoid_check_threshold: 0.1            # [m]
-          soft_road_shoulder_margin: 0.3                # [m]
-          hard_road_shoulder_margin: 0.3                # [m]
+          soft_road_shoulder_margin: 0.6                # [m]
+          hard_road_shoulder_margin: 0.6                # [m]
           max_right_shift_length: 5.0
           max_left_shift_length: 5.0
         # avoidance distance parameters

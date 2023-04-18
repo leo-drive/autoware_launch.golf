@@ -23,7 +23,7 @@
         split_points_distance_tolerance: 0.2
         use_virtual_ground_point: True
         split_height_distance: 0.25
-        non_ground_height_threshold: 0.30
+        non_ground_height_threshold: 0.35
         grid_size_m: 0.1
         grid_mode_switch_radius: 20.0
         gnd_grid_buffer_size: 4

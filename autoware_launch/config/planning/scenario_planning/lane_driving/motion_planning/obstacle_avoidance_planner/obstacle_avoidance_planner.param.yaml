@@ -126,7 +126,7 @@
 
         # how to represent footprint as circles
         vehicle_circles:
-          method: "fitting_uniform_circle"
+          method: "uniform_circle"
 
           bicycle_model:
             num_for_calculation: 3

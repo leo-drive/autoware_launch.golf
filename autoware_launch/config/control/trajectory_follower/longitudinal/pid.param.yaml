@@ -1,6 +1,6 @@
 /**:
   ros__parameters:
-    delay_compensation_time: 1.0
+    delay_compensation_time: 0.6
 
     enable_smooth_stop: false
     enable_overshoot_emergency: true
@@ -60,7 +60,7 @@
     emergency_jerk: -3.0
 
     # acceleration limit
-    max_acc: 0.6
+    max_acc: 1.47
     min_acc: -2.0
 
     # jerk limit

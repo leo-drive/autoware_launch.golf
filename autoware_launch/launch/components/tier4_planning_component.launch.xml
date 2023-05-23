@@ -38,14 +38,17 @@
       value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/avoidance_by_lc/avoidance_by_lc.param.yaml"
     />
     <arg
+      name="dynamic_avoidance_param_path"
+      value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/dynamic_avoidance/dynamic_avoidance.param.yaml"
+    />
+    <arg
       name="lane_change_param_path"
       value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/lane_change/lane_change.param.yaml"
     />
     <arg
-      name="lane_following_param_path"
-      value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/lane_following/lane_following.param.yaml"
+      name="goal_planner_param_path"
+      value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/goal_planner/goal_planner.param.yaml"
     />
-    <arg name="pull_over_param_path" value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/pull_over/pull_over.param.yaml"/>
     <arg name="pull_out_param_path" value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/pull_out/pull_out.param.yaml"/>
     <arg
       name="drivable_area_expansion_param_path"
@@ -103,6 +106,7 @@
       name="obstacle_avoidance_planner_param_path"
       value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/motion_planning/obstacle_avoidance_planner/obstacle_avoidance_planner.param.yaml"
     />
+    <arg name="path_sampler_param_path" value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/motion_planning/path_sampler/path_sampler.param.yaml"/>
     <arg
       name="obstacle_velocity_limiter_param_path"
       value="$(find-pkg-share autoware_launch)/config/planning/scenario_planning/lane_driving/motion_planning/obstacle_velocity_limiter/obstacle_velocity_limiter.param.yaml"

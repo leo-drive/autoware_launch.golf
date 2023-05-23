@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /System1
         - /System1/TF1/Frames1
+        - /Map1/PointCloudMap1
         - /Map1/Lanelet2VectorMap1
         - /Map1/Lanelet2VectorMap1/Namespaces1
         - /Sensing1/LiDAR1/ConcatenatePointCloud1/Topic1
@@ -620,7 +621,7 @@ Visualization Manager:
                 Reliability Policy: Reliable
                 Value: /sensing/gnss/pose_with_covariance
               Value: true
-          Enabled: false
+          Enabled: true
           Name: GNSS
         - Alpha: 1
           Autocompute Intensity Bounds: true
@@ -927,7 +928,6 @@ Visualization Manager:
                   PEDESTRIAN:
                     Alpha: 0.9990000128746033
                     Color: 255; 192; 203
-                  Polygon Type: 3d
                   TRAILER:
                     Alpha: 0.9990000128746033
                     Color: 30; 144; 255
@@ -944,7 +944,6 @@ Visualization Manager:
                     Alpha: 0.9990000128746033
                     Color: 255; 255; 255
                   Value: true
-                  Visualization Type: Normal
               Enabled: false
               Name: Detection
             - Class: rviz_common/Group
@@ -1029,7 +1028,6 @@ Visualization Manager:
                   PEDESTRIAN:
                     Alpha: 0.9990000128746033
                     Color: 255; 192; 203
-                  Polygon Type: 3d
                   TRAILER:
                     Alpha: 0.9990000128746033
                     Color: 30; 144; 255
@@ -1046,7 +1044,6 @@ Visualization Manager:
                     Alpha: 0.9990000128746033
                     Color: 255; 255; 255
                   Value: true
-                  Visualization Type: Normal
                 - Class: rviz_default_plugins/MarkerArray
                   Enabled: false
                   Name: Maneuver
@@ -1341,7 +1338,11 @@ Visualization Manager:
               Enabled: true
               Name: RouteArea
               Namespaces:
-                {}
+                goal_lanelets: true
+                lane_start_bound: true
+                left_lane_bound: true
+                right_lane_bound: true
+                route_lanelets: true
               Topic:
                 Depth: 5
                 Durability Policy: Transient Local
@@ -2333,7 +2334,10 @@ Visualization Manager:
                           Enabled: true
                           Name: VirtualWall (Intersection)
                           Namespaces:
-                            {}
+                            intersection4532_stop_factor_text: true
+                            intersection4532_stop_virtual_wall: true
+                            intersection4578_stop_factor_text: true
+                            intersection4578_stop_virtual_wall: true
                           Topic:
                             Depth: 5
                             Durability Policy: Volatile
@@ -2381,7 +2385,8 @@ Visualization Manager:
                           Enabled: true
                           Name: VirtualWall (StopLine)
                           Namespaces:
-                            {}
+                            stop_factor_text: true
+                            stop_virtual_wall: true
                           Topic:
                             Depth: 5
                             Durability Policy: Volatile
@@ -2919,7 +2924,8 @@ Visualization Manager:
                           Enabled: true
                           Name: VirtualWall (ObstacleAvoidance)
                           Namespaces:
-                            {}
+                            stop_factor_text: true
+                            stop_virtual_wall: true
                           Topic:
                             Depth: 5
                             Durability Policy: Volatile

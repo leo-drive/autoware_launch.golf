@@ -6,7 +6,8 @@ Panels:
       Expanded:
         - /System1
         - /System1/TF1/Frames1
-        - /Map1/Lanelet2VectorMap1
+        - /Map1
+        - /Map1/PointCloudMap1
         - /Map1/Lanelet2VectorMap1/Namespaces1
         - /Sensing1/LiDAR1/ConcatenatePointCloud1/Topic1
         - /Sensing1/LiDAR1/ConcatenatePointCloud1/Autocompute Value Bounds1
@@ -14,11 +15,18 @@ Panels:
         - /Perception1/ObjectRecognition1/Detection1
         - /Perception1/ObjectRecognition1/Tracking1/TrackedObjects1
         - /Perception1/Cameras1/roi_cluster_debug_image1
+        - /Planning1
         - /Planning1/MissionPlanning1/RouteArea1
         - /Planning1/ScenarioPlanning1
-        - /Plotter2D1/Topic1
-      Splitter Ratio: 0.4874274730682373
-    Tree Height: 204
+        - /Planning1/ScenarioPlanning1/LaneDriving1
+        - /Planning1/ScenarioPlanning1/LaneDriving1/MotionPlanning1
+        - /Planning1/ScenarioPlanning1/LaneDriving1/MotionPlanning1/DebugMarker1
+        - /Planning1/ScenarioPlanning1/LaneDriving1/MotionPlanning1/DebugMarker1/ObstacleStop1
+        - /Planning1/ScenarioPlanning1/LaneDriving1/MotionPlanning1/DebugMarker1/ObstacleStop1/Namespaces1
+        - /Planning1/ScenarioPlanning1/LaneDriving1/MotionPlanning1/DebugMarker1/ObstacleAvoidance1
+        - /Planning1/ScenarioPlanning1/LaneDriving1/MotionPlanning1/DebugMarker1/ObstacleAvoidance1/Namespaces1
+      Splitter Ratio: 0.6508313417434692
+    Tree Height: 278
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -38,6 +46,8 @@ Panels:
     Name: AutowareStatePanel
   - Class: tier4_localization_rviz_plugin/InitialPoseButtonPanel
     Name: InitialPoseButtonPanel
+  - Class: AutowareScreenCapturePanel
+    Name: AutowareScreenCapturePanel
 Visualization Manager:
   Class: ""
   Displays:
@@ -110,11 +120,9 @@ Visualization Manager:
               Value: false
             base_link:
               Value: true
-            gnss_ins_base_link:
-              Value: true
             map:
               Value: false
-            ndt_base_link:
+            odom:
               Value: true
             sensor_kit_base_link:
               Value: false
@@ -127,57 +135,7 @@ Visualization Manager:
           Show Names: true
           Tree:
             map:
-              base_link:
-                sensor_kit_base_link:
-                  CAM_B/camera_link:
-                    CAM_B/camera_optical_link:
-                      {}
-                  CAM_BL/camera_link:
-                    CAM_BL/camera_optical_link:
-                      {}
-                  CAM_BR/camera_link:
-                    CAM_BR/camera_optical_link:
-                      {}
-                  CAM_F/camera_link:
-                    CAM_F/camera_optical_link:
-                      {}
-                  CAM_FL/camera_link:
-                    CAM_FL/camera_optical_link:
-                      {}
-                  CAM_FR/camera_link:
-                    CAM_FR/camera_optical_link:
-                      {}
-                  CAM_ML/camera_link:
-                    CAM_ML/camera_optical_link:
-                      {}
-                  CAM_MR/camera_link:
-                    CAM_MR/camera_optical_link:
-                      {}
-                  GNSS_INS/gnss_ins_link:
-                    {}
-                  GNSS_INS_link:
-                    {}
-                  VLP16_BL_base_link:
-                    VLP16_BL:
-                      {}
-                  VLP16_BR_base_link:
-                    VLP16_BR:
-                      {}
-                  VLP16_F_base_link:
-                    VLP16_F:
-                      {}
-                  VLP16_ML_base_link:
-                    VLP16_ML:
-                      {}
-                  VLP16_MR_base_link:
-                    VLP16_MR:
-                      {}
-                  VLS128_TOP_base_link:
-                    VLS128_TOP:
-                      {}
-              gnss_ins_base_link:
-                {}
-              ndt_base_link:
+              odom:
                 {}
               viewer:
                 {}
@@ -495,7 +453,7 @@ Visualization Manager:
           Name: PointCloudMap
           Position Transformer: XYZ
           Selectable: false
-          Size (Pixels): 1
+          Size (Pixels): 5
           Size (m): 0.019999999552965164
           Style: Points
           Topic:
@@ -2849,7 +2807,7 @@ Visualization Manager:
                   Displays:
                     - Class: rviz_plugins/Trajectory
                       Color Border Vel Max: 3
-                      Enabled: true
+                      Enabled: false
                       Name: Trajectory
                       Topic:
                         Depth: 5
@@ -2858,7 +2816,7 @@ Visualization Manager:
                         History Policy: Keep Last
                         Reliability Policy: Reliable
                         Value: /planning/scenario_planning/lane_driving/trajectory
-                      Value: true
+                      Value: false
                       View Footprint:
                         Alpha: 1
                         Color: 230; 230; 50
@@ -2895,8 +2853,7 @@ Visualization Manager:
                           Enabled: true
                           Name: VirtualWall (ObstacleStop)
                           Namespaces:
-                            stop_factor_text: true
-                            stop_virtual_wall: true
+                            {}
                           Topic:
                             Depth: 5
                             Durability Policy: Volatile
@@ -3003,12 +2960,7 @@ Visualization Manager:
                           Enabled: true
                           Name: ObstacleStop
                           Namespaces:
-                            collision_polygons: true
-                            detection_polygons: true
-                            stop_factor_text: true
-                            stop_obstacle_point: true
-                            stop_obstacle_text: true
-                            stop_virtual_wall: true
+                            {}
                           Topic:
                             Depth: 5
                             Durability Policy: Volatile
@@ -3057,7 +3009,7 @@ Visualization Manager:
                           Enabled: false
                           Name: ObstacleCruise
                         - Class: rviz_default_plugins/MarkerArray
-                          Enabled: false
+                          Enabled: true
                           Name: ObstacleAvoidance
                           Namespaces:
                             {}
@@ -3067,7 +3019,7 @@ Visualization Manager:
                             History Policy: Keep Last
                             Reliability Policy: Reliable
                             Value: /planning/scenario_planning/lane_driving/motion_planning/obstacle_avoidance_planner/debug/marker
-                          Value: false
+                          Value: true
                       Enabled: true
                       Name: DebugMarker
                   Enabled: true
@@ -3247,102 +3199,6 @@ Visualization Manager:
           Value: false
       Enabled: true
       Name: Control
-    - Auto Color Change: false
-      Auto Scale: false
-      Background Alpha: 0
-      Background Color: 0; 0; 0
-      Buffer Length: 100
-      Class: rviz_2d_overlay_plugins/Plotter2D
-      Enabled: true
-      Foreground Alpha: 1
-      Foreground Color: 25; 255; 40
-      Height: 64
-      Line Width: 1
-      Max Color: 255; 0; 0
-      Max Value: 100
-      Min Value: 0
-      Name: Plotter2D
-      Show Border: true
-      Show Caption: true
-      Show Value: true
-      Text Size: 12
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /avarage_position_error
-      Update Interval: 0.03999999910593033
-      Value: true
-      Width: 64
-      hor_alignment: left
-      hor_dist: 0
-      left: 128
-      top: 128
-      ver_alignment: top
-      ver_dist: 0
-    - Auto Color Change: false
-      Auto Scale: false
-      Background Alpha: 0
-      Background Color: 0; 0; 0
-      Buffer Length: 100
-      Class: rviz_2d_overlay_plugins/Plotter2D
-      Enabled: true
-      Foreground Alpha: 1
-      Foreground Color: 25; 255; 40
-      Height: 64
-      Line Width: 1
-      Max Color: 255; 0; 0
-      Max Value: 100
-      Min Value: 0
-      Name: Plotter2D
-      Show Border: true
-      Show Caption: true
-      Show Value: true
-      Text Size: 12
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /ndt_time
-      Update Interval: 0.03999999910593033
-      Value: true
-      Width: 64
-      hor_alignment: left
-      hor_dist: 0
-      left: 128
-      top: 128
-      ver_alignment: top
-      ver_dist: 0
-    - Align Bottom: true
-      Background Alpha: 0
-      Background Color: 0; 0; 0
-      Class: rviz_2d_overlay_plugins/TextOverlay
-      Enabled: true
-      Foreground Alpha: 1
-      Foreground Color: 200; 195; 198
-      Invert Shadow: true
-      Name: TextOverlay
-      Overtake BG Color Properties: true
-      Overtake FG Color Properties: true
-      Overtake Position Properties: true
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /RTK_Status
-      Value: true
-      font: Liberation Mono
-      height: 130
-      hor_alignment: left
-      hor_dist: 33
-      line width: 1
-      text size: 12
-      ver_alignment: bottom
-      ver_dist: 359
-      width: 250
   Enabled: true
   Global Options:
     Background Color: 10; 10; 10
@@ -3433,7 +3289,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -2.019998788833618
+      Angle: 0
       Class: rviz_default_plugins/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -3443,11 +3299,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 45.84214401245117
-      Target Frame: map
+      Scale: 4.41489315032959
+      Target Frame: base_link
       Value: TopDownOrtho (rviz_default_plugins)
-      X: 58683.8671875
-      Y: 42851.33984375
+      X: 58738.78125
+      Y: 42957.24609375
     Saved:
       - Class: rviz_default_plugins/ThirdPersonFollower
         Distance: 18
@@ -3487,16 +3343,18 @@ Visualization Manager:
 Window Geometry:
   AutowareDateTimePanel:
     collapsed: false
+  AutowareScreenCapturePanel:
+    collapsed: false
   AutowareStatePanel:
     collapsed: false
   Displays:
     collapsed: false
-  Height: 1034
+  Height: 1400
   Hide Left Dock: false
   Hide Right Dock: false
   InitialPoseButtonPanel:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000207000003b4fc0200000019fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b00000107000000c700fffffffb0000000a005600690065007700730100000148000000d3000000a000fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730000000179000000e00000005c00fffffffb00000024004100750074006f00770061007200650053007400610074006500500061006e0065006c0100000221000001ce0000015e00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d0065007200610100000682000000eb0000000000000000fb0000002e0072006f0069005f0063006c00750073007400650072005f00640065006200750067005f0069006d0061006700650000000312000000dd0000002800fffffffb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c00000003480000008f0000007100fffffffb00000030005200650063006f0067006e006900740069006f006e0052006500730075006c0074004f006e0049006d0061006700650000000359000000340000002800fffffffb0000002a004100750074006f0077006100720065004400610074006500540069006d006500500061006e0065006c0000000366000000520000003f00fffffffb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c000000031e000000b90000007100fffffffb0000001800660072006f006e0074005f00630061006d006500720061000000033d000000b20000002800fffffffb0000002400660072006f006e0074005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb0000002200660072006f006e0074005f006c006500660074005f00630061006d0065007200610000000318000000d70000002800fffffffb00000024006d006900640064006c0065005f006c006500660074005f00630061006d0065007200610000000312000000dd0000002800fffffffb00000026006d006900640064006c0065005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000200072006500610072005f006c006500660074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000220072006500610072005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000160072006500610072005f00630061006d0065007200610000000312000000dd0000002800fffffffb0000000a0049006d0061006700650100000324000000cb0000000000000000000000010000015f000006fffc0200000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000e7a0000005afc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e7a0000005afc0100000002fb0000000800540069006d0065010000000000000e7a0000000000000000fb0000000800540069006d006501000000000000045000000000000000000000056f000003b400000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001e400000522fc020000001afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b00000151000000c700fffffffb0000000a00560069006500770073010000019200000111000000a000fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730000000179000000e00000005c00fffffffb00000024004100750074006f00770061007200650053007400610074006500500061006e0065006c01000002a9000002510000015c00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d0065007200610100000682000000eb0000000000000000fb0000002e0072006f0069005f0063006c00750073007400650072005f00640065006200750067005f0069006d0061006700650000000312000000dd0000002800fffffffb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c00000003480000008f0000007100fffffffb00000030005200650063006f0067006e006900740069006f006e0052006500730075006c0074004f006e0049006d0061006700650000000359000000340000002800fffffffb0000002a004100750074006f0077006100720065004400610074006500540069006d006500500061006e0065006c0000000366000000520000003f00fffffffb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c000000031e000000b90000007100fffffffb0000001800660072006f006e0074005f00630061006d006500720061000000033d000000b20000002800fffffffb0000002400660072006f006e0074005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb0000002200660072006f006e0074005f006c006500660074005f00630061006d0065007200610000000318000000d70000002800fffffffb00000024006d006900640064006c0065005f006c006500660074005f00630061006d0065007200610000000312000000dd0000002800fffffffb00000026006d006900640064006c0065005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000200072006500610072005f006c006500660074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000220072006500610072005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000160072006500610072005f00630061006d0065007200610000000312000000dd0000002800fffffffb0000000a0049006d0061006700650100000324000000cb0000000000000000fb00000034004100750074006f007700610072006500530063007200650065006e004300610070007400750072006500500061006e0065006c01000005000000005d0000005d00ffffff000000010000015f000006fffc0200000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000e7a0000005afc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e7a0000005afc0100000002fb0000000800540069006d0065010000000000000e7a0000000000000000fb0000000800540069006d00650100000000000004500000000000000000000008120000052200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   RecognitionResultOnImage:
     collapsed: false
   Selection:
@@ -3505,9 +3363,9 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1916
-  X: 0
-  Y: 44
+  Width: 2556
+  X: 1920
+  Y: 38
   front_camera:
     collapsed: false
   front_left_camera:

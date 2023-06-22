@@ -4,11 +4,11 @@
     system_emergency_heartbeat_timeout: 0.5
     use_emergency_handling: false
     check_external_emergency_heartbeat: false
-    use_start_request: false
+    use_start_request: true
     enable_cmd_limit_filter: true
     external_emergency_stop_heartbeat_timeout: 0.0
     stop_hold_acceleration: -1.5
-    emergency_acceleration: -2.4
+    emergency_acceleration: -5.0
     moderate_stop_service_acceleration: -1.5
     stopped_state_entry_duration_time: 0.1
     stop_check_duration: 1.0

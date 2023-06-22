@@ -7,11 +7,11 @@
 
     # Node
     update_rate: 10.0
-    visualize_lanelet: false
-    include_right_lanes: false
+    visualize_lanelet: true
+    include_right_lanes: true
     include_left_lanes: false
     include_opposite_lanes: false
-    include_conflicting_lanes: false
+    include_conflicting_lanes: true
     boundary_types_to_detect: [road_border]
 
     # Core

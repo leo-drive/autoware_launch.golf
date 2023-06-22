@@ -37,7 +37,7 @@
     mpt:
       option:
         # TODO(murooka) enable the following. Currently enabling the flag makes QP so heavy
-        steer_limit_constraint: false
+        steer_limit_constraint: true
         visualize_sampling_num: 1
         enable_manual_warm_start: false
         enable_warm_start: true
@@ -66,8 +66,8 @@
 
         # tracking error
         lat_error_weight: 1.0       # weight for lateral error
-        yaw_error_weight: 0.0       # weight for yaw error
-        yaw_error_rate_weight: 0.0  # weight for yaw error rate
+        yaw_error_weight: 1.0       # weight for yaw error
+        yaw_error_rate_weight: 1.0  # weight for yaw error rate
         steer_input_weight: 1.0     # weight for steering input
         steer_rate_weight: 1.0      # weight for steering rate
 
@@ -100,7 +100,7 @@
 
         # how to represent footprint as circles
         vehicle_circles:
-          method: "uniform_circle"
+          method: "bicycle_model"
 
           bicycle_model:
             num_for_calculation: 3

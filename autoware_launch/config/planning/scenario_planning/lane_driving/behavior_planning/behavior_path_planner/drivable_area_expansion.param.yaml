@@ -7,7 +7,7 @@
 
     # Dynamic expansion by projecting the ego footprint along the path
     dynamic_expansion:
-      enabled: true
+      enabled: false
       ego:
         extra_footprint_offset:
           front: 1.0 # [m] extra length to add to the front of the ego footprint
@@ -25,7 +25,7 @@
         max_arc_length: 50.0 # [m] maximum arc length along the path where the ego footprint is projected (0.0 means no limit)
         resample_interval: 2.0 # [m] fixed interval between resampled path points (0.0 means path points are directly used)
       expansion:
-        method: polygon # method used to expand the drivable area. Either 'lanelet' or 'polygon'.
+        method: lanelet # method used to expand the drivable area. Either 'lanelet' or 'polygon'.
                          # 'lanelet': add lanelets overlapped by the ego footprints
                          # 'polygon': add polygons built around sections of the ego footprint that go out of the drivable area
         max_distance: 0.0 # [m] maximum distance by which the drivable area can be expended (0.0 means no limit)

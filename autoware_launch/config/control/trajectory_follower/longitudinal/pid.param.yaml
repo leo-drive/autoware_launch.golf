@@ -1,11 +1,11 @@
 /**:
   ros__parameters:
-    delay_compensation_time: 0.17
+    delay_compensation_time: 0.5
 
     enable_smooth_stop: true
     enable_overshoot_emergency: false
     enable_large_tracking_error_emergency: false
-    enable_slope_compensation: true
+    enable_slope_compensation: false
     enable_keep_stopped_until_steer_convergence: true
 
     # state transition
@@ -21,8 +21,8 @@
 
     # drive state
     kp: 1.0
-    ki: 0.05
-    kd: 0.4
+    ki: 0.1
+    kd: 0.0
     max_out: 1.0
     min_out: -1.5
     max_p_effort: 1.0
@@ -32,7 +32,7 @@
     max_d_effort: 0.5
     min_d_effort: -0.5
     lpf_vel_error_gain: 0.9
-    current_vel_threshold_pid_integration: 0.0
+    current_vel_threshold_pid_integration: -0.01
     enable_brake_keeping_before_stop: false
     brake_keeping_acc: -0.2
 

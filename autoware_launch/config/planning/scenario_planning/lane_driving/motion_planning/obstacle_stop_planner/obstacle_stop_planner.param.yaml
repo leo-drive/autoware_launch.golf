@@ -25,8 +25,8 @@
       detection_area:
         lateral_margin: 0.2                  # margin [m]
         vehicle_lateral_margin: 0.2          # margin of vehicle footprint [m]
-        pedestrian_lateral_margin: 0.5       # margin of pedestrian footprint [m]
-        unknown_lateral_margin: 0.3          # margin of unknown footprint [m]
+        pedestrian_lateral_margin: 0.2       # margin of pedestrian footprint [m]
+        unknown_lateral_margin: 0.1          # margin of unknown footprint [m]
         step_length: 1.0                     # step length for pointcloud search range [m]
         enable_stop_behind_goal_for_obstacle: True # enable extend trajectory after goal lane for obstacle detection
 
@@ -43,7 +43,7 @@
       detection_area:
         lateral_margin: 0.3                  # offset from vehicle side edge for expanding the search area of the surrounding point cloud [m]
         vehicle_lateral_margin: 0.3          # offset from vehicle side edge for expanding the search area of the surrounding point cloud [m]
-        pedestrian_lateral_margin: 0.3       # offset from pedestrian side edge for expanding the search area of the surrounding point cloud [m]
+        pedestrian_lateral_margin: 0.5       # offset from pedestrian side edge for expanding the search area of the surrounding point cloud [m]
         unknown_lateral_margin: 0.3          # offset from unknown side edge for expanding the search area of the surrounding point cloud [m]
 
       # params for velocity

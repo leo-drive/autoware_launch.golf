@@ -103,7 +103,7 @@
 
           bicycle_model:
             num_for_calculation: 3
-            front_radius_ratio: 1.0
+            front_radius_ratio: 1.15
             rear_radius_ratio: 1.0
 
           uniform_circle:

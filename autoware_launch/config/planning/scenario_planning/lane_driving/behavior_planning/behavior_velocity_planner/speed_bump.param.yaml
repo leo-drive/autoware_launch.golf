@@ -1,8 +1,8 @@
 /**:
   ros__parameters:
     speed_bump:
-      slow_start_margin: 3.0
-      slow_end_margin: 0.3
+      slow_start_margin: 0.5
+      slow_end_margin: 0.0
       print_debug_info: true
 
       # limits for speed bump height and slow down speed to create a linear equation

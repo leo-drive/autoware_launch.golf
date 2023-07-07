@@ -4,6 +4,8 @@
     avoidance:
       resample_interval_for_planning: 0.3               # [m]
       resample_interval_for_output: 4.0                 # [m]
+      detection_area_right_expand_dist: 0.5             # [m]
+      detection_area_left_expand_dist: 0.5              # [m]
       drivable_area_right_bound_offset: 0.0             # [m]
       drivable_area_left_bound_offset: 0.0              # [m]
 
@@ -34,8 +36,8 @@
           moving_time_threshold: 1.0                   # [s]
           max_expand_ratio: 0.0                        # [-]
           envelope_buffer_margin: 0.3                  # [m]
-          avoid_margin_lateral: 1.0                    # [m]
-          safety_buffer_lateral: 0.3                   # [m]
+          avoid_margin_lateral: 0.5                    # [m]
+          safety_buffer_lateral: 0.5                   # [m]
           safety_buffer_longitudinal: 0.0              # [m]
         truck:
           is_target: true
@@ -44,8 +46,8 @@
           moving_time_threshold: 1.0
           max_expand_ratio: 0.0
           envelope_buffer_margin: 0.3
-          avoid_margin_lateral: 1.0
-          safety_buffer_lateral: 0.7
+          avoid_margin_lateral: 0.5
+          safety_buffer_lateral: 0.5
           safety_buffer_longitudinal: 0.0
         bus:
           is_target: true
@@ -54,8 +56,8 @@
           moving_time_threshold: 1.0
           max_expand_ratio: 0.0
           envelope_buffer_margin: 0.3
-          avoid_margin_lateral: 1.0
-          safety_buffer_lateral: 0.7
+          avoid_margin_lateral: 0.5
+          safety_buffer_lateral: 0.5
           safety_buffer_longitudinal: 0.0
         trailer:
           is_target: true
@@ -64,8 +66,8 @@
           moving_time_threshold: 1.0
           max_expand_ratio: 0.0
           envelope_buffer_margin: 0.3
-          avoid_margin_lateral: 1.0
-          safety_buffer_lateral: 0.7
+          avoid_margin_lateral: 0.5
+          safety_buffer_lateral: 0.5
           safety_buffer_longitudinal: 0.0
         unknown:
           is_target: true
@@ -74,8 +76,8 @@
           moving_time_threshold: 1.0
           max_expand_ratio: 0.0
           envelope_buffer_margin: 0.3
-          avoid_margin_lateral: 1.0
-          safety_buffer_lateral: 0.7
+          avoid_margin_lateral: 0.5
+          safety_buffer_lateral: 0.5
           safety_buffer_longitudinal: 0.0
         bicycle:
           is_target: true
@@ -84,7 +86,7 @@
           moving_time_threshold: 1.0
           max_expand_ratio: 0.0
           envelope_buffer_margin: 0.8
-          avoid_margin_lateral: 1.0
+          avoid_margin_lateral: 0.5
           safety_buffer_lateral: 1.0
           safety_buffer_longitudinal: 1.0
         motorcycle:
@@ -94,7 +96,7 @@
           moving_time_threshold: 1.0
           max_expand_ratio: 0.0
           envelope_buffer_margin: 0.8
-          avoid_margin_lateral: 1.0
+          avoid_margin_lateral: 0.5
           safety_buffer_lateral: 1.0
           safety_buffer_longitudinal: 1.0
         pedestrian:

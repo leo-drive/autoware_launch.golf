@@ -11,7 +11,7 @@ pcl_grid_map_extraction:
       y: 0.0
   cluster_extraction:
     cluster_tolerance: 0.2
-    min_num_points: 3
+    min_num_points: 1
     max_num_points: 1000000
   outlier_removal:
     is_remove_outliers: false

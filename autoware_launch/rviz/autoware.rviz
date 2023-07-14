@@ -6,9 +6,9 @@ Panels:
       Expanded:
         - /System1/TF1
         - /Map1/Lanelet2VectorMap1/Namespaces1
+        - /Sensing1/LiDAR1
         - /Sensing1/LiDAR1/ConcatenatePointCloud1/Topic1
         - /Sensing1/LiDAR1/ConcatenatePointCloud1/Autocompute Value Bounds1
-        - /Perception1/ObjectRecognition1/Prediction1/PredictedObjects1
         - /Perception1/Cameras1/roi_cluster_debug_image1
         - /Planning1/ScenarioPlanning1/LaneDriving1
         - /Planning1/ScenarioPlanning1/LaneDriving1/MotionPlanning1/DebugMarker1/ObstacleStop1/Namespaces1
@@ -109,8 +109,12 @@ Visualization Manager:
               Value: true
             map:
               Value: false
+            ndt_base_link:
+              Value: true
             sensor_kit_base_link:
               Value: false
+            viewer:
+              Value: true
           Marker Scale: 3
           Name: TF
           Show Arrows: true
@@ -118,7 +122,56 @@ Visualization Manager:
           Show Names: true
           Tree:
             map:
+              base_link:
+                sensor_kit_base_link:
+                  CAM_B/camera_link:
+                    CAM_B/camera_optical_link:
+                      {}
+                  CAM_BL/camera_link:
+                    CAM_BL/camera_optical_link:
+                      {}
+                  CAM_BR/camera_link:
+                    CAM_BR/camera_optical_link:
+                      {}
+                  CAM_F/camera_link:
+                    CAM_F/camera_optical_link:
+                      {}
+                  CAM_FL/camera_link:
+                    CAM_FL/camera_optical_link:
+                      {}
+                  CAM_FR/camera_link:
+                    CAM_FR/camera_optical_link:
+                      {}
+                  CAM_ML/camera_link:
+                    CAM_ML/camera_optical_link:
+                      {}
+                  CAM_MR/camera_link:
+                    CAM_MR/camera_optical_link:
+                      {}
+                  GNSS_INS/gnss_ins_link:
+                    {}
+                  GNSS_INS_link:
+                    {}
+                  VLP16_BL_base_link:
+                    VLP16_BL:
+                      {}
+                  VLP16_BR_base_link:
+                    VLP16_BR:
+                      {}
+                  VLP16_ML_base_link:
+                    VLP16_ML:
+                      {}
+                  VLP16_MR_base_link:
+                    VLP16_MR:
+                      {}
+                  VLS128_TOP_base_link:
+                    VLS128_TOP:
+                      {}
               gnss_ins_base_link:
+                {}
+              ndt_base_link:
+                {}
+              viewer:
                 {}
           Update Interval: 0
           Value: true
@@ -493,7 +546,7 @@ Visualization Manager:
               Name: ConcatenatePointCloud
               Position Transformer: XYZ
               Selectable: false
-              Size (Pixels): 1
+              Size (Pixels): 3
               Size (m): 0.019999999552965164
               Style: Points
               Topic:
@@ -802,7 +855,7 @@ Visualization Manager:
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
-      Enabled: false
+      Enabled: true
       Name: Sensing
     - Class: rviz_common/Group
       Displays:
@@ -967,7 +1020,12 @@ Visualization Manager:
               Enabled: true
               Name: MonteCarloInitialPose
               Namespaces:
-                {}
+                initial_pose_index_color_marker: true
+                initial_pose_iteration_color_marker: true
+                initial_pose_transform_probability_color_marker: true
+                result_pose_index_color_marker: true
+                result_pose_iteration_color_marker: true
+                result_pose_transform_probability_color_marker: true
               Topic:
                 Depth: 5
                 Durability Policy: Volatile
@@ -1146,13 +1204,13 @@ Visualization Manager:
               Color: 170; 255; 0
               Color Transformer: FlatColor
               Decay Time: 0
-              Enabled: true
+              Enabled: false
               Invert Rainbow: false
               Max Color: 255; 255; 255
               Max Intensity: 15
               Min Color: 0; 0; 0
               Min Intensity: -5
-              Name: ClusteringMapFiltered
+              Name: PointCloudMapFiltered
               Position Transformer: XYZ
               Selectable: false
               Size (Pixels): 10
@@ -1167,7 +1225,75 @@ Visualization Manager:
                 Value: /perception/object_recognition/detection/pointcloud_map_filtered/pointcloud
               Use Fixed Frame: true
               Use rainbow: true
-              Value: true
+              Value: false
+            - Alpha: 0.9990000128746033
+              Autocompute Intensity Bounds: true
+              Autocompute Value Bounds:
+                Max Value: 15
+                Min Value: -2
+                Value: false
+              Axis: Z
+              Channel Name: z
+              Class: rviz_default_plugins/PointCloud2
+              Color: 170; 255; 0
+              Color Transformer: FlatColor
+              Decay Time: 0
+              Enabled: false
+              Invert Rainbow: false
+              Max Color: 255; 255; 255
+              Max Intensity: 15
+              Min Color: 0; 0; 0
+              Min Intensity: -5
+              Name: ClusteringPointCloudMapFiltered
+              Position Transformer: XYZ
+              Selectable: false
+              Size (Pixels): 10
+              Size (m): 0.019999999552965164
+              Style: Points
+              Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                Filter size: 10
+                History Policy: Keep Last
+                Reliability Policy: Best Effort
+                Value: /perception/object_recognition/detection/clustering/short_range/pointcloud
+              Use Fixed Frame: true
+              Use rainbow: true
+              Value: false
+            - Alpha: 1
+              Autocompute Intensity Bounds: true
+              Autocompute Value Bounds:
+                Max Value: 10
+                Min Value: -10
+                Value: true
+              Axis: Z
+              Channel Name: intensity
+              Class: rviz_default_plugins/PointCloud2
+              Color: 255; 255; 255
+              Color Transformer: RGB8
+              Decay Time: 0
+              Enabled: false
+              Invert Rainbow: false
+              Max Color: 255; 255; 255
+              Max Intensity: 4096
+              Min Color: 0; 0; 0
+              Min Intensity: 0
+              Name: Clusters
+              Position Transformer: XYZ
+              Selectable: true
+              Size (Pixels): 7
+              Size (m): 0.009999999776482582
+              Style: Points
+              Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                Filter size: 10
+                History Policy: Keep Last
+                Reliability Policy: Reliable
+                Value: /perception/object_recognition/detection/clustering/debug/clusters
+              Use Fixed Frame: true
+              Use rainbow: true
+              Value: false
           Enabled: true
           Name: Segmentation
         - Class: rviz_common/Group
@@ -1295,13 +1421,17 @@ Visualization Manager:
                   Display UUID: true
                   Display Velocity: true
                   Enabled: true
-                  Line Width: 0.029999999329447746
+                  Line Width: 0.10000000149011612
                   MOTORCYCLE:
                     Alpha: 0.9990000128746033
                     Color: 119; 11; 32
                   Name: PredictedObjects
                   Namespaces:
-                    {}
+                    label: true
+                    shape: true
+                    twist: true
+                    uuid: true
+                    velocity: true
                   PEDESTRIAN:
                     Alpha: 0.9990000128746033
                     Color: 255; 192; 203
@@ -1716,40 +1846,6 @@ Visualization Manager:
             Color: 255; 255; 255
           Value: false
           Visualization Type: Normal
-        - Alpha: 1
-          Autocompute Intensity Bounds: true
-          Autocompute Value Bounds:
-            Max Value: 10
-            Min Value: -10
-            Value: true
-          Axis: Z
-          Channel Name: intensity
-          Class: rviz_default_plugins/PointCloud2
-          Color: 255; 255; 255
-          Color Transformer: RGB8
-          Decay Time: 0
-          Enabled: false
-          Invert Rainbow: false
-          Max Color: 255; 255; 255
-          Max Intensity: 4096
-          Min Color: 0; 0; 0
-          Min Intensity: 0
-          Name: Clusters
-          Position Transformer: XYZ
-          Selectable: true
-          Size (Pixels): 7
-          Size (m): 0.009999999776482582
-          Style: Points
-          Topic:
-            Depth: 5
-            Durability Policy: Volatile
-            Filter size: 10
-            History Policy: Keep Last
-            Reliability Policy: Reliable
-            Value: /perception/object_recognition/detection/clustering/debug/clusters
-          Use Fixed Frame: true
-          Use rainbow: true
-          Value: false
       Enabled: true
       Name: Perception
     - Class: rviz_common/Group
@@ -3750,7 +3846,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -2.005000352859497
+      Angle: 0
       Class: rviz_default_plugins/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -3760,11 +3856,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 23.232847213745117
+      Scale: 13.451050758361816
       Target Frame: base_link
       Value: TopDownOrtho (rviz_default_plugins)
-      X: 10.463109016418457
-      Y: -0.8665494322776794
+      X: 6.828330039978027
+      Y: 2.602027177810669
     Saved:
       - Class: rviz_default_plugins/ThirdPersonFollower
         Distance: 18
@@ -3815,7 +3911,7 @@ Window Geometry:
   Hide Right Dock: false
   InitialPoseButtonPanel:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000216000003b4fc020000001afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b00000159000000c700fffffffb0000000a00560069006500770073010000019a000000f1000000a000fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730000000179000000e00000005c00fffffffb00000024004100750074006f00770061007200650053007400610074006500500061006e0065006c01000002910000015e0000015e00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d0065007200610100000682000000eb0000000000000000fb0000002e0072006f0069005f0063006c00750073007400650072005f00640065006200750067005f0069006d0061006700650000000312000000dd0000002800fffffffb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c00000003480000008f0000007100fffffffb00000030005200650063006f0067006e006900740069006f006e0052006500730075006c0074004f006e0049006d0061006700650000000359000000340000002800fffffffb0000002a004100750074006f0077006100720065004400610074006500540069006d006500500061006e0065006c0000000366000000520000003f00fffffffb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c000000031e000000b90000007100fffffffb0000001800660072006f006e0074005f00630061006d006500720061000000033d000000b20000002800fffffffb0000002400660072006f006e0074005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb0000002200660072006f006e0074005f006c006500660074005f00630061006d0065007200610000000318000000d70000002800fffffffb00000024006d006900640064006c0065005f006c006500660074005f00630061006d0065007200610000000312000000dd0000002800fffffffb00000026006d006900640064006c0065005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000200072006500610072005f006c006500660074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000220072006500610072005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000160072006500610072005f00630061006d0065007200610000000312000000dd0000002800fffffffb0000000a0049006d0061006700650100000324000000cb0000000000000000fb00000034004100750074006f007700610072006500530063007200650065006e004300610070007400750072006500500061006e0065006c00000003a60000005f0000005d00ffffff000000010000015f000006fffc0200000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000e7a0000005afc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e7a0000005afc0100000002fb0000000800540069006d0065010000000000000e7a0000000000000000fb0000000800540069006d0065010000000000000450000000000000000000000560000003b400000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001a7000003b4fc020000001afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b00000159000000c700fffffffb0000000a00560069006500770073010000019a000000f1000000a000fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730000000179000000e00000005c00fffffffb00000024004100750074006f00770061007200650053007400610074006500500061006e0065006c01000002910000015e0000015c00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d0065007200610100000682000000eb0000000000000000fb0000002e0072006f0069005f0063006c00750073007400650072005f00640065006200750067005f0069006d0061006700650000000312000000dd0000002800fffffffb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c00000003480000008f0000007100fffffffb00000030005200650063006f0067006e006900740069006f006e0052006500730075006c0074004f006e0049006d0061006700650000000359000000340000002800fffffffb0000002a004100750074006f0077006100720065004400610074006500540069006d006500500061006e0065006c0000000366000000520000003f00fffffffb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c000000031e000000b90000007100fffffffb0000001800660072006f006e0074005f00630061006d006500720061000000033d000000b20000002800fffffffb0000002400660072006f006e0074005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb0000002200660072006f006e0074005f006c006500660074005f00630061006d0065007200610000000318000000d70000002800fffffffb00000024006d006900640064006c0065005f006c006500660074005f00630061006d0065007200610000000312000000dd0000002800fffffffb00000026006d006900640064006c0065005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000200072006500610072005f006c006500660074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000220072006500610072005f00720069006700680074005f00630061006d0065007200610000000312000000dd0000002800fffffffb000000160072006500610072005f00630061006d0065007200610000000312000000dd0000002800fffffffb0000000a0049006d0061006700650100000324000000cb0000000000000000fb00000034004100750074006f007700610072006500530063007200650065006e004300610070007400750072006500500061006e0065006c00000003a60000005f0000005d00ffffff000000010000015f000006fffc0200000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000e7a0000005afc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e7a0000005afc0100000002fb0000000800540069006d0065010000000000000e7a0000000000000000fb0000000800540069006d00650100000000000004500000000000000000000005cf000003b400000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   RecognitionResultOnImage:
     collapsed: false
   Selection:

@@ -38,20 +38,28 @@
     <!-- camera arguments -->
     <arg name="image_raw0" value="/lucid_vision/front_right_camera/image_rect"/>
     <arg name="camera_info0" value="/lucid_vision/front_right_camera/camera_info"/>
+    <arg name="detection_rois0" value="/perception/object_recognition/detection/front_right_camera/rois0"/>
     <arg name="image_raw1" value="/lucid_vision/front_camera/image_rect"/>
     <arg name="camera_info1" value="/lucid_vision/front_camera/camera_info"/>
+    <arg name="detection_rois1" value="/perception/object_recognition/detection/front_camera/rois1"/>
     <arg name="image_raw2" value="/lucid_vision/front_left_camera/image_rect"/>
     <arg name="camera_info2" value="/lucid_vision/front_left_camera/camera_info"/>
+    <arg name="detection_rois2" value="/perception/object_recognition/detection/front_left_camera/rois2"/>
     <arg name="image_raw3" value="/lucid_vision/middle_left_camera/image_rect"/>
     <arg name="camera_info3" value="/lucid_vision/middle_left_camera/camera_info"/>
+    <arg name="detection_rois3" value="/perception/object_recognition/detection/middle_left_camera/rois3"/>
     <arg name="image_raw4" value="/lucid_vision/middle_right_camera/image_rect"/>
     <arg name="camera_info4" value="/lucid_vision/middle_right_camera/camera_info"/>
+    <arg name="detection_rois4" value="/perception/object_recognition/detection/middle_right_camera/rois4"/>
     <arg name="image_raw5" value="/lucid_vision/rear_left_camera/image_rect"/>
     <arg name="camera_info5" value="/lucid_vision/rear_left_camera/camera_info"/>
+    <arg name="detection_rois5" value="/perception/object_recognition/detection/rear_left_camera/rois5"/>
     <arg name="image_raw6" value="/lucid_vision/rear_right_camera/image_rect"/>
     <arg name="camera_info6" value="/lucid_vision/rear_right_camera/camera_info"/>
+    <arg name="detection_rois6" value="/perception/object_recognition/detection/rear_right_camera/rois6"/>
     <arg name="image_raw7" value="/lucid_vision/rear_camera/image_rect"/>
     <arg name="camera_info7" value="/lucid_vision/rear_camera/camera_info"/>
+    <arg name="detection_rois7" value="/perception/object_recognition/detection/rear_camera/rois7"/>
     <arg name="image_number" value="8"/>
 
     <!-- param file paths -->

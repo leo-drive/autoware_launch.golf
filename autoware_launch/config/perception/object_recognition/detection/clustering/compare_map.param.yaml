@@ -2,13 +2,13 @@
   ros__parameters:
 
     # distance threshold for compare compare
-    distance_threshold: 0.5
+    distance_threshold: 0.2
 
     # publish voxelized map pointcloud for debug
     publish_debug_pcd: False
 
     # use dynamic map loading
-    use_dynamic_map_loading: True
+    use_dynamic_map_loading: False
 
     # time interval to check dynamic map loading
     timer_interval_ms: 100

@@ -19,11 +19,16 @@
     <arg name="occupancy_grid_map_updater" value="$(var occupancy_grid_map_updater)"/>
     <arg name="objects_filter_method" value="$(var detected_objects_filter_method)"/>
     <arg name="objects_validation_method" value="$(var detected_objects_validation_method)"/>
+    <!-- detection -->
+    <arg name="remove_unknown" value="false"/>
+    <arg name="score_threshold" value="0.45"/>
     <!-- tracking -->
     <arg name="enable_delay_compensation" value="false"/>
-    <!-- centerpoint -->
-    <arg name="score_threshold" default="0.45"/>
+    <!-- traffic light recognition -->
+    <arg name="use_traffic_light_recognition" value="false"/>
+    <arg name="traffic_light_recognition/enable_fine_detection" value="false"/>
 
+    <!-- param file paths -->
     <!-- object recognition -->
     <arg name="object_recognition_detection_compare_map_param_path" value="$(find-pkg-share autoware_launch)/config/perception/object_recognition/detection/clustering/compare_map.param.yaml"/>
     <arg

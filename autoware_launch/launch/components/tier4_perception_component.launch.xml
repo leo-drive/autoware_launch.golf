@@ -11,6 +11,7 @@
     <arg name="enable_fine_detection" value="$(var traffic_light_recognition/enable_fine_detection)"/>
     <arg name="occupancy_grid_map_method" value="$(var occupancy_grid_map_method)"/>
     <arg name="occupancy_grid_map_updater" value="$(var occupancy_grid_map_updater)"/>
+    <arg name="enable_delay_compensation" value="false"/>
 
     <!-- object recognition -->
     <arg name="object_recognition_detection_compare_map_param_path" value="$(find-pkg-share autoware_launch)/config/perception/object_recognition/detection/clustering/compare_map.param.yaml"/>

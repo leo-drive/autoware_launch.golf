@@ -9,6 +9,13 @@
     description="options: obstacle_pointcloud, occupancy_grid (occupancy_grid_map_method must be laserscan_based_occupancy_grid_map)"
   />
 
+    <!-- launch camera pipeline -->
+  <let name="launch_camera_pipeline" value="false"/>
+  <let name="launch_camera_pipeline" if="$(eval &quot;'$(var perception_mode)'=='camera_lidar_fusion'&quot;)" value="true"/>
+  <let name="launch_camera_pipeline" if="$(eval &quot;'$(var perception_mode)'=='camera_lidar_radar_fusion'&quot;)" value="true"/>
+
+  <include if="$(var launch_camera_pipeline)" file="$(find-pkg-share autoware_launch)/launch/components/camera_components/all_camera.launch.xml"/>
+
   <include file="$(find-pkg-share tier4_perception_launch)/launch/perception.launch.xml">
     <arg name="mode" value="$(var perception_mode)"/>
     <arg name="vehicle_param_file" value="$(find-pkg-share $(var vehicle_model)_description)/config/vehicle_info.param.yaml"/>
@@ -27,6 +34,25 @@
     <!-- traffic light recognition -->
     <arg name="use_traffic_light_recognition" value="false"/>
     <arg name="traffic_light_recognition/enable_fine_detection" value="false"/>
+
+    <!-- camera arguments -->
+    <arg name="image_raw0" value="/lucid_vision/front_right_camera/image_rect"/>
+    <arg name="camera_info0" value="/lucid_vision/front_right_camera/camera_info"/>
+    <arg name="image_raw1" value="/lucid_vision/front_camera/image_rect"/>
+    <arg name="camera_info1" value="/lucid_vision/front_camera/camera_info"/>
+    <arg name="image_raw2" value="/lucid_vision/front_left_camera/image_rect"/>
+    <arg name="camera_info2" value="/lucid_vision/front_left_camera/camera_info"/>
+    <arg name="image_raw3" value="/lucid_vision/middle_left_camera/image_rect"/>
+    <arg name="camera_info3" value="/lucid_vision/middle_left_camera/camera_info"/>
+    <arg name="image_raw4" value="/lucid_vision/middle_right_camera/image_rect"/>
+    <arg name="camera_info4" value="/lucid_vision/middle_right_camera/camera_info"/>
+    <arg name="image_raw5" value="/lucid_vision/rear_left_camera/image_rect"/>
+    <arg name="camera_info5" value="/lucid_vision/rear_left_camera/camera_info"/>
+    <arg name="image_raw6" value="/lucid_vision/rear_right_camera/image_rect"/>
+    <arg name="camera_info6" value="/lucid_vision/rear_right_camera/camera_info"/>
+    <arg name="image_raw7" value="/lucid_vision/rear_camera/image_rect"/>
+    <arg name="camera_info7" value="/lucid_vision/rear_camera/camera_info"/>
+    <arg name="image_number" value="8"/>
 
     <!-- param file paths -->
     <!-- object recognition -->

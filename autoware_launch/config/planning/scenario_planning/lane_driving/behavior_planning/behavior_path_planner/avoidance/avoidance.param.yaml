@@ -70,7 +70,7 @@
           safety_buffer_lateral: 0.5
           safety_buffer_longitudinal: 0.0
         unknown:
-          is_target: false
+          is_target: true
           execute_num: 1
           moving_speed_threshold: 0.28                 # 1.0km/h
           moving_time_threshold: 1.0

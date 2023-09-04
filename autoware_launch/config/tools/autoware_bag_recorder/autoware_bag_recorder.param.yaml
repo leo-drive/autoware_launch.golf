@@ -1,0 +1,59 @@
+/**:
+  ros__parameters:
+    common:
+      database_storage: "mcap"                              # sqlite3 or mcap
+      maximum_record_time: 36000                            # seconds
+      maximum_allowed_bag_storage_size: 7000.0              # GB
+      maximum_bag_file_size: 20.0                           # GB
+      enable_only_auto_mode_recording: false                # if enabled, recording occurs only "AUTO" mode
+      number_of_maximum_bags: 1000                          # limit of stored bag file count
+      path: "/media/golf/DATA/TEMP/"                        # Path to bag file for saving
+      prefix: "logging_ros2bag_"                            # Prefix for folder name
+      minimum_acceptable_disk_space: 100                    # GB
+      disk_space_threshold_action: "remove"                 # [remove, shutdown] remove files or shutdown node
+    raw_input_topics:                                       # for rosbag-replay (logging) simulation
+      record_raw_input: true
+      raw_input_topics:
+        - /lucid_vision/front_camera/camera_info
+        - /lucid_vision/front_left_camera/camera_info
+        - /lucid_vision/front_right_camera/camera_info
+        - /lucid_vision/middle_left_camera/camera_info
+        - /lucid_vision/middle_right_camera/camera_info
+        - /lucid_vision/rear_camera/camera_info
+        - /lucid_vision/rear_left_camera/camera_info
+        - /lucid_vision/rear_right_camera/camera_info
+        - /perception/object_recognition/detection/front_right_camera/rois0
+        - /perception/object_recognition/detection/front_camera/rois1
+        - /perception/object_recognition/detection/front_left_camera/rois2
+        - /perception/object_recognition/detection/middle_left_camera/rois3
+        - /perception/object_recognition/detection/middle_right_camera/rois4
+        - /perception/object_recognition/detection/rear_left_camera/rois5
+        - /perception/object_recognition/detection/rear_right_camera/rois6
+        - /perception/object_recognition/detection/rear_camera/rois7
+        - /sensing/lidar/top/velodyne_packets
+        - /sensing/lidar/rear_right/velodyne_packets
+        - /sensing/lidar/rear_left/velodyne_packets
+        - /sensing/lidar/middle_right/velodyne_packets
+        - /sensing/lidar/middle_left/velodyne_packets
+        - /sensing/lidar/top/pointcloud_raw
+        - /sensing/gnss/sbg/ros/ekf_nav_sat_fix
+        - /sensing/gnss/sbg/ros/imu/data
+        - /sensing/gnss/sbg/ros/imu/mag
+        - /sensing/gnss/sbg/ros/nav_sat_fix
+        - /sensing/gnss/sbg/ros/pos_ecef
+        - /sensing/gnss/sbg/ros/temp
+        - /sensing/gnss/sbg/ros/twist_with_covariance_stamped
+        - /sensing/gnss/sbg/ros/utc_ref
+        - /sensing/gnss/sbg/status
+        - /vehicle/status/control_mode
+        - /vehicle/status/gear_status
+        - /vehicle/status/steering_status
+        - /vehicle/status/velocity_status
+    other_topics:                                           # all other topics
+      record_other: true
+      other_topics:
+        - /perception/obstacle_segmentation/pointcloud
+        - /perception/object_recognition/objects
+        - /planning/scenario_planning/trajectory
+        - /planning/scenario_planning/lane_driving/behavior_planning/path
+

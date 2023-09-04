@@ -35,6 +35,7 @@
   <!-- Tools -->
   <arg name="rviz" default="true" description="launch rviz"/>
   <arg name="rviz_config" default="$(find-pkg-share autoware_launch)/rviz/autoware.rviz" description="rviz config"/>
+  <arg name="bag_recorder" default="true" description="launch autoware_bag_recorder"/>
   <!-- Perception -->
   <arg name="perception_mode" default="camera_lidar_fusion" description="select perception mode. camera_lidar_radar_fusion, camera_lidar_fusion, lidar_radar_fusion, lidar, radar"/>
   <arg name="traffic_light_recognition/enable_fine_detection" default="true" description="enable traffic light fine detection"/>
@@ -110,5 +111,9 @@
   <!-- Tools -->
   <group>
     <node pkg="rviz2" exec="rviz2" name="rviz2" output="screen" args="-d $(var rviz_config) -s $(find-pkg-share autoware_launch)/rviz/image/autoware.png" if="$(var rviz)"/>
+    <!-- Bag Recorder -->
+    <include if="$(var bag_recorder)" file="$(find-pkg-share autoware_bag_recorder)/launch/autoware_bag_recorder.launch.xml">
+      <arg name="bag_recorder_param_path" value="$(find-pkg-share autoware_launch)/config/tools/autoware_bag_recorder/autoware_bag_recorder.param.yaml"/>
+    </include>
   </group>
 </launch>

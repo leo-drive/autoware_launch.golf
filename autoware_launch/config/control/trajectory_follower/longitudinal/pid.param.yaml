@@ -10,7 +10,7 @@
 
     # state transition
     drive_state_stop_dist: 0.5
-    drive_state_offset_stop_dist: 1.0
+    drive_state_offset_stop_dist: 1.5
     stopping_state_stop_dist: 0.5
     stopped_state_entry_duration_time: 0.1
     stopped_state_entry_vel: 0.05
@@ -21,14 +21,14 @@
 
     # drive state
     kp: 1.2
-    ki: 0.4
+    ki: 1.0
     kd: 0.0
     max_out: 1.5
     min_out: -1.5
     max_p_effort: 1.5
     min_p_effort: -1.5
-    max_i_effort: 0.3
-    min_i_effort: -0.3
+    max_i_effort: 0.7
+    min_i_effort: -0.7
     max_d_effort: 0.3
     min_d_effort: -0.3
     lpf_vel_error_gain: 0.5

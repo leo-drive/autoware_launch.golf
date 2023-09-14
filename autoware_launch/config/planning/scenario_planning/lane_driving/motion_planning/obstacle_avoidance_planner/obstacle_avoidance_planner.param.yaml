@@ -37,7 +37,7 @@
     mpt:
       option:
         # TODO(murooka) enable the following. Currently enabling the flag makes QP so heavy
-        steer_limit_constraint: true
+        steer_limit_constraint: false
         visualize_sampling_num: 1
         enable_manual_warm_start: false
         enable_warm_start: true
@@ -57,7 +57,7 @@
         # if collision_free_constraints.option.hard_constraint is true
         hard_clearance_from_road: 0.0 # clearance from road boundary[m]
         # if collision_free_constraints.option.soft_constraint is true
-        soft_clearance_from_road: 0.1 # clearance from road boundary[m]
+        soft_clearance_from_road: 0.2 # clearance from road boundary[m]
 
       # weight parameter for optimization
       weight:
@@ -66,8 +66,8 @@
 
         # tracking error
         lat_error_weight: 1.0       # weight for lateral error
-        yaw_error_weight: 1.0       # weight for yaw error
-        yaw_error_rate_weight: 1.0  # weight for yaw error rate
+        yaw_error_weight: 0.0       # weight for yaw error
+        yaw_error_rate_weight: 0.0  # weight for yaw error rate
         steer_input_weight: 1.0     # weight for steering input
         steer_rate_weight: 1.0      # weight for steering rate
 
@@ -104,8 +104,8 @@
 
           bicycle_model:
             num_for_calculation: 3
-            front_radius_ratio: 1.15
-            rear_radius_ratio: 1.0
+            front_radius_ratio: 1.1
+            rear_radius_ratio: 1.1
 
           uniform_circle:
             num: 3

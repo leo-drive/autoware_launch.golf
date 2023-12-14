@@ -34,16 +34,16 @@
   <arg name="pointcloud_map_file" default="pointcloud_map.pcd" description="pointcloud map file name"/>
   <!-- System -->
   <arg name="system_run_mode" default="online" description="run mode in system"/>
-  <arg name="launch_system_monitor" default="true" description="launch system monitor"/>
+  <arg name="launch_system_monitor" default="false" description="launch system monitor"/>
   <arg name="launch_dummy_diag_publisher" default="false" description="launch dummy diag publisher"/>
   <arg name="system_error_monitor_param_path" default="$(find-pkg-share autoware_launch)/config/system/system_error_monitor/system_error_monitor.param.yaml"/>
   <!-- Tools -->
   <arg name="rviz" default="true" description="launch rviz"/>
   <arg name="rviz_config" default="$(find-pkg-share autoware_launch)/rviz/autoware.rviz" description="rviz config"/>
-  <arg name="rviz_respawn" default="true"/>
+  <arg name="rviz_respawn" default="false"/>
   <!-- Perception -->
   <arg name="perception_mode" default="lidar" description="select perception mode. camera_lidar_radar_fusion, camera_lidar_fusion, lidar_radar_fusion, lidar, radar"/>
-  <arg name="traffic_light_recognition/enable_fine_detection" default="true" description="enable traffic light fine detection"/>
+  <arg name="traffic_light_recognition/enable_fine_detection" default="false" description="enable traffic light fine detection"/>
 
   <!-- Global parameters -->
   <group scoped="false">
@@ -53,13 +53,13 @@
     </include>
   </group>
 
-  <!-- Pointcloud container -->
+  <!-- Pointcloud container
   <group if="$(var use_pointcloud_container)">
     <include file="$(find-pkg-share autoware_launch)/launch/pointcloud_container.launch.py">
       <arg name="use_multithread" value="true"/>
       <arg name="container_name" value="$(var pointcloud_container_name)"/>
     </include>
-  </group>
+  </group>-->
 
   <!-- Vehicle -->
   <group if="$(var launch_vehicle)">

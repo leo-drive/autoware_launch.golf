@@ -33,4 +33,4 @@
 
     z_filter_proc_dev: 1.0
     roll_filter_proc_dev: 0.01
-    pitch_filter_proc_dev: 0.01
+    pitch_filter_proc_dev: 1.00

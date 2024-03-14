@@ -100,12 +100,12 @@
 
         # how to represent footprint as circles
         vehicle_circles:
-          method: "fitting_uniform_circle"
+          method: "bicycle_model"
 
           bicycle_model:
             num_for_calculation: 3
-            front_radius_ratio: 1.0
-            rear_radius_ratio: 1.0
+            front_radius_ratio: 1.3
+            rear_radius_ratio: 1.3
 
           uniform_circle:
             num: 3

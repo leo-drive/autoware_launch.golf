@@ -64,7 +64,7 @@ launch:
       default: "true"
   - arg:
       name: launch_stop_line_module
-      default: "true"
+      default: "false"
   - arg:
       name: launch_occlusion_spot_module
       default: "false"
@@ -79,10 +79,10 @@ launch:
       default: "true"
   - arg:
       name: launch_no_drivable_lane_module
-      default: "false"
+      default: "true"
   - arg:
       name: launch_dynamic_obstacle_stop_module
-      default: "true"
+      default: "false"
 
   # motion planning modules
   - arg:

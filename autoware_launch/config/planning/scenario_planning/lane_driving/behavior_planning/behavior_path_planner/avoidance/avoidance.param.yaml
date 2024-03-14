@@ -118,10 +118,10 @@
           truck: true                                    # [-]
           bus: true                                      # [-]
           trailer: true                                  # [-]
-          unknown: true                                  # [-]
+          unknown: false                                  # [-]
           bicycle: true                                  # [-]
           motorcycle: true                               # [-]
-          pedestrian: true                               # [-]
+          pedestrian: false                               # [-]
         # detection range
         object_check_goal_distance: 20.0                 # [m]
         object_check_return_pose_distance: 20.0          # [m]

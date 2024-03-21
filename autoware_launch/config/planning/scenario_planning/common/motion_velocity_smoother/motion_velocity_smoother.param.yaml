@@ -1,7 +1,7 @@
 /**:
   ros__parameters:
     # motion state constraints
-    stop_decel: 0.2         # deceleration at a stop point[m/ss]
+    stop_decel: 1.0         # deceleration at a stop point[m/ss]
 
     # external velocity limit parameter
     margin_to_insert_external_velocity_limit: 0.3   #  margin distance to insert external velocity limit [m]
@@ -31,7 +31,7 @@
 
     # stop velocity
     stopping_velocity: 0.0  # change target velocity to this value before v=0 point [m/s]
-    stopping_distance: 0.5    # distance for the stopping_velocity [m]. 0 means the stopping velocity is not applied.
+    stopping_distance: 2.0    # distance for the stopping_velocity [m]. 0 means the stopping velocity is not applied.
 
     # path extraction parameters
     extract_ahead_dist: 200.0         # forward trajectory distance used for planning [m]

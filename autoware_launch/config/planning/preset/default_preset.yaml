@@ -73,7 +73,7 @@ launch:
       default: "true"
   - arg:
       name: launch_speed_bump_module
-      default: "false"
+      default: "true"
   - arg:
       name: launch_out_of_lane_module
       default: "false"

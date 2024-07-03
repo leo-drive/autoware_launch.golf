@@ -134,4 +134,10 @@
       <env name="QT_QPA_PLATFORMTHEME" value="qt5ct"/>
     </node>
   </group>
+
+  <node pkg="leodrive_baggin" exec="baggin" name="baggin">
+    <param name="autoware_path" value="$(var autoware_path)"/>
+    <param from="$(var conf_path)"/>
+    <remap from="/diagnostics" to="/baggin/diagnostics"/>
+  </node>
 </launch>

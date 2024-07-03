@@ -22,6 +22,8 @@ Panels:
     Name: AutowareDateTimePanel
   - Class: rviz_plugins::AutowareStatePanel
     Name: AutowareStatePanel
+  - Class: Baggin Control Panel
+    Name: Baggin Control Panel
 Visualization Manager:
   Class: ""
   Displays:
@@ -245,6 +247,7 @@ Visualization Manager:
             - Class: autoware_overlay_rviz_plugin/SignalDisplay
               Enabled: true
               Gear Topic Test: /vehicle/status/gear_status
+              Handle Angle Scale: 17
               Hazard Lights Topic: /vehicle/status/hazard_lights_status
               Height: 100
               Left: 0
@@ -3083,25 +3086,11 @@ Visualization Manager:
                 Debug:
                   Control: true
                   Localization:
-                    EKFPoseHistory: true
-                    NDT pointclouds: true
-                    NDTLoadedPCDMap: true
-                    NDTPoseHistory: true
+                    "": true
                     Value: true
                   Map: true
                   Perception:
-                    CameraLidarFusion(purple): true
-                    Centerpoint(red1): true
-                    CenterpointROIFusion(red2): true
-                    CenterpointValidator(red3): true
-                    Detection(yellow): true
-                    DetectionByTracker(orange): true
-                    PointPainting(light_green1): true
-                    PointPaintingROIFusion(light_green2): true
-                    PointPaintingValidator(light_green3): true
-                    Prediction(light_blue): true
-                    RadarFarObjects(white): true
-                    Tracking(green): true
+                    "": true
                     Value: true
                   Planning:
                     "":
@@ -3174,7 +3163,6 @@ Visualization Manager:
                           Crosswalk: true
                           DetectionArea: true
                           DynamicObstacleAvoidance: true
-                          DynamicObstacleStop: true
                           GoalPlanner: true
                           Intersection: true
                           LaneFollowing: true
@@ -3225,7 +3213,6 @@ Visualization Manager:
                           VirtualWall (BlindSpot): true
                           VirtualWall (Crosswalk): true
                           VirtualWall (DetectionArea): true
-                          VirtualWall (DynamicObstacleStop): true
                           VirtualWall (ExtLaneChangeLeft): true
                           VirtualWall (ExtLaneChangeRight): true
                           VirtualWall (GoalPlanner): true
@@ -3247,6 +3234,8 @@ Visualization Manager:
                       MotionPlanning:
                         DebugMarker:
                           MotionVelocityPlanner:
+                            DynamicObstacleStop: true
+                            ObstacleVelocityLimiter: true
                             OutOfLane: true
                             Value: true
                           ObstacleAvoidance: true
@@ -3267,10 +3256,12 @@ Visualization Manager:
                         Value: true
                         VirtualWall:
                           Value: true
+                          VirtualWall (DynamicObstacleStop): true
                           VirtualWall (MotionVelocitySmoother): true
                           VirtualWall (ObstacleAvoidance): true
                           VirtualWall (ObstacleCruise): true
                           VirtualWall (ObstacleStop): true
+                          VirtualWall (ObstacleVelocityLimiter): true
                           VirtualWall (OutOfLane): true
                           VirtualWall (SurroundObstacle): true
                       Value: true
@@ -4443,7 +4434,7 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 12.26071548461914
+      Scale: 6.260712146759033
       Target Frame: base_link
       Value: TopDownOrtho (rviz_default_plugins)
       X: 0
@@ -4488,6 +4479,8 @@ Window Geometry:
   AutowareDateTimePanel:
     collapsed: false
   AutowareStatePanel:
+    collapsed: false
+  Baggin Control Panel:
     collapsed: false
   Displays:
     collapsed: false

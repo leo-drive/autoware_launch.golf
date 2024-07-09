@@ -9,7 +9,7 @@
     min_generated_path_length: 0.5
     imu_prediction_time_horizon: 1.5
     imu_prediction_time_interval: 0.1
-    mpc_prediction_time_horizon: 1.5
+    mpc_prediction_time_horizon: 2.0
     mpc_prediction_time_interval: 0.1
 
     # Debug

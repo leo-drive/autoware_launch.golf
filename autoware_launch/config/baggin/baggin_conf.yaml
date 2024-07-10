@@ -32,6 +32,7 @@
       - /perception/object_recognition/tracking/objects
       - /perception/occupancy_grid_map/map
       - /sensing/camera/camera2/image_raw/compressed # front camera (needs to be anonymized)
+      - /sensing/camera/camera2/camera_info
       - /sensing/lidar/rear_left/velodyne_packets
       - /sensing/lidar/rear_right/velodyne_packets
       - /sensing/lidar/top/velodyne_packets

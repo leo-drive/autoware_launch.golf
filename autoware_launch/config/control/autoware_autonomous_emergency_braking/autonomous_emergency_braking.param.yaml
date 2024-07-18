@@ -2,14 +2,14 @@
   ros__parameters:
     # Ego path calculation
     use_predicted_trajectory: true
-    use_imu_path: false
+    use_imu_path: true
     use_pointcloud_data: true
     use_predicted_object_data: false
     use_object_velocity_calculation: true
     min_generated_path_length: 0.5
-    imu_prediction_time_horizon: 1.5
+    imu_prediction_time_horizon: 2.5
     imu_prediction_time_interval: 0.1
-    mpc_prediction_time_horizon: 2.0
+    mpc_prediction_time_horizon: 2.5
     mpc_prediction_time_interval: 0.1
 
     # Debug
@@ -35,7 +35,7 @@
     # RSS distance collision check
     longitudinal_offset: 2.0
     t_response: 1.0
-    a_ego_min: -3.0
+    a_ego_min: -5.0
     a_obj_min: -1.0
     collision_keeping_sec: 2.0
     previous_obstacle_keep_time: 1.0

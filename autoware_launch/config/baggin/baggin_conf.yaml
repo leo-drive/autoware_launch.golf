@@ -56,4 +56,19 @@
       - ^/vehicle/*
       - ^/tf*
     exclude_topics:
-      - ^/my_awesome_ns/excluded_topic$
+      - ^/perception/object_recognition/detection/rois0/debug/image$
+      - ^/perception/object_recognition/detection/rois1/debug/image$
+      - ^/perception/object_recognition/detection/rois2/debug/image$
+      - ^/perception/object_recognition/detection/rois3/debug/image$
+      - ^/perception/object_recognition/detection/rois4/debug/image$
+      - ^/perception/object_recognition/detection/rois5/debug/image$
+      - ^/perception/object_recognition/detection/rois6/debug/image$
+      - ^/perception/object_recognition/detection/rois7/debug/image$
+      - /perception/object_recognition/detection/rois0/debug/image/compressed
+      - /perception/object_recognition/detection/rois1/debug/image/compressed
+      - /perception/object_recognition/detection/rois2/debug/image/compressed
+      - /perception/object_recognition/detection/rois3/debug/image/compressed
+      - /perception/object_recognition/detection/rois4/debug/image/compressed
+      - /perception/object_recognition/detection/rois5/debug/image/compressed
+      - /perception/object_recognition/detection/rois6/debug/image/compressed
+      - /perception/object_recognition/detection/rois7/debug/image/compressed

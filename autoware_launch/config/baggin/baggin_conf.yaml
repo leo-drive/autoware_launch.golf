@@ -37,7 +37,7 @@
       - /sensing/lidar/rear_right/velodyne_packets
       - /sensing/lidar/top/velodyne_packets
       - /sensing/lidar/middle_left/velodyne_packets
-      - /sensing/lidar/middle_right/velodyne_packets
+      - /sensing/lidar/middle_right/velodyne_packetsc
       - /rosout
     regex_topics:
       - ^/api/*

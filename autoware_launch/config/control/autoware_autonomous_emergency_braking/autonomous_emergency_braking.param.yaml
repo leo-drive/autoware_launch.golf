@@ -7,13 +7,14 @@
     use_predicted_object_data: false
     use_object_velocity_calculation: true
     min_generated_path_length: 0.5
-    imu_prediction_time_horizon: 2.5
+    imu_prediction_time_horizon: 1.5
     imu_prediction_time_interval: 0.1
-    mpc_prediction_time_horizon: 2.5
+    mpc_prediction_time_horizon: 4.5
     mpc_prediction_time_interval: 0.1
 
     # Debug
     publish_debug_pointcloud: false
+    publish_debug_markers: true
 
     # Point cloud partitioning
     detection_range_min_height: 0.0
@@ -28,14 +29,14 @@
 
     # Point cloud clustering
     cluster_tolerance: 0.15 #[m]
-    cluster_minimum_height: 0.0
+    cluster_minimum_height: 0.1
     minimum_cluster_size: 10
     maximum_cluster_size: 10000
 
     # RSS distance collision check
     longitudinal_offset: 2.0
     t_response: 1.0
-    a_ego_min: -5.0
+    a_ego_min: -3.0
     a_obj_min: -1.0
     collision_keeping_sec: 2.0
     previous_obstacle_keep_time: 1.0

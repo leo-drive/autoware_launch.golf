@@ -67,7 +67,7 @@
           th_moving_time: 1.0
           longitudinal_margin: 0.0
           lateral_margin:
-            soft_margin: 0.15
+            soft_margin: 0.7
             hard_margin: -0.2
             hard_margin_for_parked_vehicle: -0.2
           max_expand_ratio: 0.0
@@ -78,7 +78,7 @@
           th_moving_time: 1.0
           longitudinal_margin: 1.0
           lateral_margin:
-            soft_margin: 0.15
+            soft_margin: 0.7
             hard_margin: 0.5
             hard_margin_for_parked_vehicle: 0.5
           max_expand_ratio: 0.0
@@ -89,7 +89,7 @@
           th_moving_time: 1.0
           longitudinal_margin: 1.0
           lateral_margin:
-            soft_margin: 0.15
+            soft_margin: 0.7
             hard_margin: 0.3
             hard_margin_for_parked_vehicle: 0.3
           max_expand_ratio: 0.0
@@ -120,7 +120,7 @@
           unknown: true                                 # [-]
           bicycle: true                                 # [-]
           motorcycle: true                              # [-]
-          pedestrian: false                              # [-]
+          pedestrian: true                              # [-]
         # detection range
         object_check_goal_distance: 20.0                # [m]
         object_check_return_pose_distance: 20.0         # [m]

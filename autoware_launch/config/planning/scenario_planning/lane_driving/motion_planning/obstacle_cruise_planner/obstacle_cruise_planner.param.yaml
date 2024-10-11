@@ -94,7 +94,7 @@
       decimate_trajectory_step_length : 2.0 # longitudinal step length to calculate trajectory polygon for collision checking
 
       prediction_resampling_time_interval: 0.1
-      prediction_resampling_time_horizon: 10.0
+      prediction_resampling_time_horizon: 7.0
 
       stop_obstacle_hold_time_threshold : 1.0 # maximum time for holding closest stop obstacle
 

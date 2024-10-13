@@ -8,7 +8,7 @@
     use_delayed_initial_state: true # flag to use x0_delayed as initial state for predicted trajectory
 
     # -- path smoothing --
-    enable_path_smoothing: true   # flag for path smoothing
+    enable_path_smoothing: false   # flag for path smoothing
     path_filter_moving_ave_num: 25 # param of moving average filter for path smoothing
     curvature_smoothing_num_traj: 15        # point-to-point index distance used in curvature calculation (for trajectory): curvature is calculated from three points p(i-num), p(i), p(i+num)
     curvature_smoothing_num_ref_steer: 15   # point-to-point index distance used in curvature calculation (for steer command reference): curvature is calculated from three points p(i-num), p(i), p(i+num)
@@ -50,8 +50,8 @@
     vehicle_model_steer_tau: 0.1      # steering dynamics time constant (1d approximation) [s]
     steer_rate_lim_dps_list_by_curvature: [40.0, 50.0, 60.0]            # steering angle rate limit list depending on curvature [deg/s]
     curvature_list_for_steer_rate_lim: [0.001, 0.002, 0.01]              # curvature list for steering angle rate limit interpolation in ascending order [/m]
-    steer_rate_lim_dps_list_by_velocity: [11.25, 11.25,  9.  ,  6.75,  4.5 ,  2.25,  1.5 ,  1.5 ,  1.5]  # steering angle rate limit list depending on velocity [deg/s] [72, 72, 36, 18, 9, 3.6, 3.6]
-    velocity_list_for_steer_rate_lim:    [0.0,   1.388,  2.778,  4.167,  5.556,   6.944,  8.333,  9.722,  11.11] # velocity list for steering angle rate limit interpolation in ascending order [m/s]
+    steer_rate_lim_dps_list_by_velocity: [25.0, 25.0, 20.0, 15.0, 15.0, 12.0, 10.0, 5.0,  1.5]  # steering angle rate limit list depending on velocity [deg/s] [72, 72, 36, 18, 9, 3.6, 3.6]
+    velocity_list_for_steer_rate_lim:    [0.0, 1.388, 2.778, 4.167, 5.556, 6.944, 8.333, 9.722, 11.11] # velocity list for steering angle rate limit interpolation in ascending order [m/s]
     acceleration_limit: 1.75          # acceleration limit for trajectory velocity modification [m/ss]
     velocity_time_constant: 0.3      # velocity dynamics time constant  for trajectory velocity modification [s]
 

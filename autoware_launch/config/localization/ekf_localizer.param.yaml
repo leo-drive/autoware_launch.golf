@@ -2,7 +2,7 @@
   ros__parameters:
     node:
       show_debug_info: false
-      enable_yaw_bias_estimation: true
+      enable_yaw_bias_estimation: false
       predict_frequency: 50.0
       tf_rate: 50.0
       publish_tf: true
@@ -23,15 +23,15 @@
 
     process_noise:
       # for process model
-      proc_stddev_yaw_c: 0.005
+      proc_stddev_yaw_c: 0.14
       proc_stddev_vx_c: 10.0
       proc_stddev_wz_c: 5.0
 
     simple_1d_filter_parameters:
       #Simple1DFilter parameters
       z_filter_proc_dev: 1.0
-      roll_filter_proc_dev: 0.1
-      pitch_filter_proc_dev: 0.1
+      roll_filter_proc_dev: 0.01
+      pitch_filter_proc_dev: 0.01
 
     diagnostics:
       # for diagnostics

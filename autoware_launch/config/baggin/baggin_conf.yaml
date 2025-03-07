@@ -32,6 +32,8 @@
       - /perception/object_recognition/tracking/objects
       - /perception/occupancy_grid_map/map
       - /sensing/camera/camera2/image_raw/compressed # front camera (needs to be anonymized)
+      - /sensing/camera/camera0/image_raw/compressed # front camera (needs to be anonymized)
+      - /sensing/camera/camera1/image_raw/compressed # front camera (needs to be anonymized)
       - /sensing/camera/camera2/camera_info
       - /sensing/lidar/rear_left/velodyne_packets
       - /sensing/lidar/rear_right/velodyne_packets
@@ -40,20 +42,20 @@
       - /sensing/lidar/middle_right/velodyne_packets
       - /rosout
     regex_topics:
-      - ^/api/*
-      - ^/autoware/*
-      - ^/awapi/*
-      - ^/control/*
-      - ^/diagnostics*
-      - ^/external/*
-      - ^/initialpose/*
-      - ^/perception/object_recognition/detection/rois*
-      - ^/planning/*
-      - ^/sensing/gnss/*
-      - ^/sensing/imu/*
-      - ^/sensing/vehicle_velocity_converter/*
-      - ^/system/*
-      - ^/vehicle/*
+#      - ^/api/*
+#      - ^/autoware/*
+#      - ^/awapi/*
+#      - ^/control/*
+#      - ^/diagnostics*
+#      - ^/external/*
+#      - ^/initialpose/*
+#      - ^/perception/object_recognition/detection/rois*
+#      - ^/planning/*
+#      - ^/sensing/gnss/*
+#      - ^/sensing/imu/*
+#      - ^/sensing/vehicle_velocity_converter/*
+#      - ^/system/*
+#      - ^/vehicle/*
       - ^/tf*
     exclude_topics:
       - ^/my_awesome_ns/excluded_topic$
